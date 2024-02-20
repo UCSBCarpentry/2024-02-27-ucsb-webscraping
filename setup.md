@@ -13,8 +13,8 @@ For the first half of the lesson, we will use a Chrome browser extension to get 
 1. Please ensure you have a working copy of the [Chrome browser](https://www.google.com/intl/en/chrome/browser/).
 2. Using Chrome, download and enable the [Scraper extension](https://chrome.google.com/webstore/detail/scraper/mbigbapnjcgaffohmbkdlecaccepngjd).
 
-## For this workshop we will not be using Python, however, we will keep the instructions to install Scrapy below for future use
 
+<!---
 ## Part two: Write Python programs to automatically scrape data
 
 ### Shell and Python
@@ -55,4 +55,4 @@ Alternatively, if you have another distribution of Python, you can try using pip
 If you run into issues while installing Scrapy, refer to the
 [official Scrapy install guide](https://doc.scrapy.org/en/latest/intro/install.html#intro-install)
 or get in touch with your lesson instructor.
-
+-->
