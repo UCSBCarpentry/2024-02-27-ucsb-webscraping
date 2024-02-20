@@ -4,11 +4,10 @@ title: Setup
 root: .
 ---
 
-In order to follow this lesson, you will need to make sure the following software is installed on your computer.
+In order to follow this lesson, you will need to make sure the following is installed on your computer.
+## Manually scrape data using browser extensions
 
-## Part one: Manually scrape data using browser extensions
-
-For the first half of the lesson, we will use a Chrome browser extension to get started with web scraping.
+For this lesson, we will use a Chrome browser extension to get started with web scraping.
 
 1. Please ensure you have a working copy of the [Chrome browser](https://www.google.com/intl/en/chrome/browser/).
 2. Using Chrome, download and enable the [Scraper extension](https://chrome.google.com/webstore/detail/scraper/mbigbapnjcgaffohmbkdlecaccepngjd).
