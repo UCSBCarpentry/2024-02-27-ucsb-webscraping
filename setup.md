@@ -1,31 +1,56 @@
-<p>
-  To participate in a
-  {% if site.carpentry == "swc" %}
-  Software Carpentry
-  {% elsif site.carpentry == "dc" %}
-  Data Carpentry
-  {% elsif site.carpentry == "lc" %}
-  Library Carpentry
-  {% endif %}
-  workshop,
-  you will need access to software as described below.
-  In addition, you will need an up-to-date web browser.
-</p>
-<p>
-  We maintain a list of common issues that occur during installation as a reference for instructors
-  that may be useful on the
-  <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
-</p>
+---
+layout: page
+title: Setup
+root: .
+---
 
+In order to follow this lesson, you will need to make sure the following software is installed on your computer.
 
-{% if site.carpentry == "swc" %}
-{% include swc/setup.html %}
-{% elsif site.carpentry == "dc" %}
-{% include dc/setup.html %}
-{% elsif site.carpentry == "lc" %}
-{% include lc/setup.html %}
-{% elsif site.carpentry == "incubator" %}
-Please check the "Setup" page of
-[the lesson site]({{ site.incubator_lesson_site }}) for instructions to follow
-to obtain the software and data you will need to follow the lesson.
-{% endif %}
+## Part one: Manually scrape data using browser extensions
+
+For the first half of the lesson, we will use a Chrome browser extension to get started with web scraping.
+
+1. Please ensure you have a working copy of the [Chrome browser](https://www.google.com/intl/en/chrome/browser/).
+2. Using Chrome, download and enable the [Scraper extension](https://chrome.google.com/webstore/detail/scraper/mbigbapnjcgaffohmbkdlecaccepngjd).
+
+## Part two: Write Python programs to automatically scrape data
+
+### Shell and Python
+The second part of the lesson requires the Python programming language and access to a command-line interface (shell) on your computer.
+Please refer to [the Software Carpentry setup instructions](http://swcarpentry.github.io/workshop-template/#setup) for
+*the Bash shell* and *Python* if you need guidance.
+
+> ## Prerequisites
+> This part of the lesson requires some prior knowledge of Python and how to use a shell.
+> If you need help getting started on those topics, we suggest going through the following
+> lessons first (during a workshop or on your own):
+>
+> * [The Unix Shell](http://swcarpentry.github.io/shell-novice/)
+> * [Programming with Python](http://swcarpentry.github.io/python-novice-inflammation/)
+>
+{: .prereq}
+
+### Scrapy
+
+Once you have a working installation of Python, the next step is to install [Scrapy](https://scrapy.org/).
+
+If you have installed Python using the Anaconda framework as suggested by the Software Carpentry setup instructions,
+you can easilly install Scrapy by doing the following:
+
+1. Open a new shell (e.g. Terminal on Mac, or the Anaconda command-line tool on Windows)
+2. Type the following:
+
+> conda install -c conda-forge scrapy
+>
+{: .source}
+
+Alternatively, if you have another distribution of Python, you can try using pip:
+
+> pip install Scrapy
+>
+{: .source}
+
+If you run into issues while installing Scrapy, refer to the
+[official Scrapy install guide](https://doc.scrapy.org/en/latest/intro/install.html#intro-install)
+or get in touch with your lesson instructor.
+
