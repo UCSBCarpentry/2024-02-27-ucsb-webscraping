@@ -56,11 +56,12 @@ In this workshop, we will learn how to extract contact information
 from UCSB departments' faculty pages. This example came from a recent real-life scenario when our team needed to make lists of social sciences faculty for outreach reasons. There is no overarching list of faculty, contact information, and study area available for the university as a whole. This was made even more difficult by the fact that each UCSB department has webpages with wildly different formating. We will see examples using both the scraping chrome extension and Scrapy through Python. There are different scenarios when one might be a better choice than the other.
 
 But before that we need to first understand  , let's start by looking at the list of members of the Canadian parliament, which is available
-on the [Parliament of Canada website](http://www.parl.gc.ca/Parliamentarians/en/members).
+on the [Parliament of Canada website](https://www.ourcommons.ca/members/en/search?view=list)
 
-This is how this page appears in November 2016:
+This is how this page appears in February 2024:
 
-![Screenshot of the Parliament of Canada website]({{ page.root }}/fig/canparl.png)
+![Screenshot of the Parliament of Canada website (Top)]({{ page.root }}/fig/canparl-top.png)
+![Screenshot of the Parliament of Canada websitei (Bottom)]({{ page.root }}/fig/canparl-bottom.png)
 
 There are several features (circled in the image above) that make the data on this page easier to work with.
 The search, reorder, refine features and display modes hint that the data is actually stored in a (structured)
@@ -72,32 +73,32 @@ knowledge of Canadian geography and politics can see what information pertains t
 politicians' names, the geographical area they come from and the political party they represent. This is because human
 beings are good at using context and prior knowledge to quickly categorise information.
 
-Computers, on the other hand, cannot do this unless we provide them with more information.
-Fortunately, if we examine the source HTML code of this page, we can see that the information displayed is actually
-organised inside labelled elements:
+Computers, on the other hand, cannot do this unless we provide them with more
+information. If we examine the source HTML code of this page, we can see that
+the information displayed has a consistent structure:
 
 ~~~
 (...)
-<div>
-    <a href="/Parliamentarians/en/members/Ziad-Aboultaif(89156)"> 
-        <img alt="Photo - Ziad Aboultaif - Click to open the Member of Parliament profile" title="Photo - Ziad Aboultaif - Click to open the Member of Parliament profile" src="http://www.parl.gc.ca/Parliamentarians/Images/OfficialMPPhotos/42/AboultaifZiad_CPC.jpg" class="picture" />
-        <div class="full-name">
-		    <span class="honorific"><abbr></abbr></span>
-            <span class="first-name">Ziad</span>
-            <span class="last-name">Aboultaif</span>
-        </div>
-    </a>
-    <div class="caucus-banner" style="background-color:#002395"></div>
-    <div class="caucus">Conservative</div>
-    <div class="constituency">Edmonton Manning</div>
-    <div class="province">Alberta</div>        
-</div>
+<tr role="row" id="mp-list-id-25446" class="odd">
+    <td data-sort="Allison Dean" class="sorting_1">
+        <a href="/members/en/dean-allison(25446)">
+            Allison, Dean
+        </a>
+    </td>
+    <td data-sort="Conservative">Conservative</td>
+    <td data-sort="Niagara West">
+        <a href="/members/en/constituencies/niagara-west(782)">
+            Niagara West
+        </a>
+    </td>
+    <td data-sort="Ontario">Ontario</td>
+</tr>
 (...)
 ~~~
 {: .output}
 
-Thanks to these labels, we could relatively easily instruct a computer to look for all parliamentarians from
-Alberta and list their names and caucus information.
+Using this structure, we may be able to instruct a computer to look for all
+parliamentarians from Alberta and list their names and caucus information.
 
 > ## Structured vs unstructured data
 >
