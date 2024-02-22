@@ -114,7 +114,7 @@ parliamentarians from Alberta and list their names and caucus information.
 >
 {: .callout}
 
-Let's look now at the current list of members for the [UK House of Commons](https://www.parliament.uk/mps-lords-and-offices/mps/). 
+Let's look now at the current list of members for the [UK House of Commons](https://members.parliament.uk/members/commons).
 
 ![Screenshot of the UK House of Commons website]({{ page.root }}/fig/ukparl.png)
 
@@ -125,19 +125,32 @@ Here is the code for this page:
 
 ~~~
 (...)
-<table>
-    <tbody>
-        (...)
-        <tr id="ctl00_ctl00_(...)_trItemRow" class="first">
-            <td>Aberavon</td>
-            <td id="ctl00_ctl00_(...)_tdNameCellRight">
-                <a id="ctl00_ctl00_(...)_hypName" href="http://www.parliament.uk/biographies/commons/stephen-kinnock/4359">Kinnock, Stephen</a>(Labour)
-            </td>
-        </tr>
-        (...)
-    </tbody>
-</table>
-(...)
+<a class="card card-member" href="/member/172/contact">
+    <div class="card-inner">
+        <div class="content">
+            <div class="image-outer">
+                <div class="image" aria-label="Image of Ms Diane Abbott" style="background-image: url(https://members-api.parliament.uk/api/Members/172/Thumbnail); border-color: #C0C0C0;"></div>
+            </div>
+            <div class="primary-info">
+                Ms Diane Abbott
+            </div>
+            <div class="secondary-info">
+                Independent
+            </div>
+        </div>
+        <div class="info">
+            <div class="info-inner">
+                <div class="indicators-left">
+                    <div class="indicator indicator-label">
+                        Hackney North and Stoke Newington
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</a>(...)
 ~~~
 {: .output}
 
