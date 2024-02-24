@@ -333,7 +333,7 @@ Array [ <blockquote.challenge>, <blockquote.challenge>, <blockquote.challenge>, 
 > > ## Solution
 > >
 > > ~~~
-> > $x("/html/body/div/h1[@id='introduction']")
+> > $x("/html/body/div/article/h1[@id='introduction']")
 > > ~~~
 > > {: .source}
 > >
