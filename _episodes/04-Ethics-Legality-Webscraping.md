@@ -53,28 +53,26 @@ If we send too many such requests over a short span of time, we can prevent othe
 from accessing the site during that time, or even cause the server to run out of resources and crash.
 
 In fact, this is such an efficient way to disrupt a web site that hackers are often doing it on purpose.
-This is called a <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack" target="_blank"> Denial of Service (DoS) attack</a>.
+This is called a <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack" target="_blank"> Distributed Denial of Service (DoS) attack</a>.
 
 > ## Distributed Denial of Service Attacks in 2020 and 2021
 >
-> The <a href= "https://business.comcast.com/community/browse-all/details/2021-comcast-business-ddos-threat-report">2021 Comcast Business DDoS (Distributed Denial of Service) Threat Report</a> recorded
-> a significant increase in global DDoS attacks in 2020 and 2021. Also, Comcast also noted how these years saw a shift in targets
-> for these attacks.
+> According to their <a href= "https://radar.cloudflare.com/reports/ddos-2023-q4"> DDoS Attack Trends for 
+> 2023 Q4</a>, Cloudfare recorded a 117% year-over-year increase in DDoS attacks during the last quarter of 2023.
 >
-> What category of targets do you think saw the most DDoS attacks in 2021?
-> * A. Education, Finance, Government, and Healthcare
-> * B. Information Technology & Manufacturing
-> * C. Retail, Real Estate, Transportation, Utilities, and Religious Institutions
-> * D. Individuals
+> What industry do you think saw the most DDoS attacks in 2023Q4 related to its total network traffic?
+> * A. Chemicals
+> * B. Government Relations
+> * C. Environmental Services
+> * D. Banking, Financial Institutions, and Insurance (BFSI)
 >
 > > ## Solution
-> > Answer: A. Education, Finance, Government, Healthcare
+> > Answer: C. Environmental Services.
 > >
-> > According to <a href= "https://www.interpol.int/en/News-and-Events/News/2020/INTERPOL-report-shows-alarming-rate-of-cyberattacks-during-COVID-19">INTERPOL</a>,
-> > as cited by the Comcast report, attacks in 2020 shifted from individuals to big corporation, government and critical infrastructure.
-> >
-> > 73% of attacks targeted Education, Finance, Government, and Healthcare. Retail, Real Estate, Transportation, Utilities, and Religious Institutions; and
-> > Information Technology & Manufacturing both took less than 20% of attacks.
+> > The report says that, during 2023 Q4, 50% of the traffic of Environmental Services websites was related to a DDoS
+> > attack. These attacks coincided with the 28th United Nations Climate Change Conference (COP 28). There was also an
+> > important amount of attacks related to retail and shipment, that coincided with the holiday season.
+> > ![DDos attacks by industry in 2023 Q4, relative by traffic in each industry]({{ page.root }}/fig/DDoS-attacks.png)
 > > 
 > {: .solution}
 {: .challenge}
@@ -88,33 +86,21 @@ A web scraper, even one with legitimate purposes and no intent to bring a websit
 similar behaviour and, if we are not careful, result in our computer being banned from accessing
 a website.
 
-The good news is that a good web scraper, such as Scrapy, recognizes that this is a risk and includes
-measures to prevent our code from appearing to launch a DoS attack on a website. This is mostly
-done by inserting a random delay between individual requests, which gives the target server enough
-time to handle requests from other users between ours.
-
-This is Scrapy's default behaviour, and it should prevent most scraping projects from ever causing problems.
-To be on the safe side, however, it is good practice to limit the number of pages we are scraping
-while we are still writing and debugging our code. This is why in the previous section, we imposed
-a limit of five pages to be scraped, which we only removed when we were reasonably certain the scraper
-was working as it should.
-
-Limiting requests to a particular domain, by using Scrapy's `allowed_domains` property is another
-way to make sure our code is not going to start scraping the entire Internet by mistake.
-
-Thanks to the defenses web servers use to protect themselves against DoS attacks and Scrapy's
-measure to avoid inadvertently launching such an attack, the risks of causing trouble is limited.
-
 > ## Ethics Discussion: Intentional precautionary measures
 > 
-> Even though Scrapy's default behavior is intended to prevent Denial of Service on a website,
-> you as the user can make choices that are mindful of how you use Scrapy.
-> 
-> What are some precautionary practices you can do as a Scrapy user?
+> If you have a web scraping project that involves querying the same website hundreds of times,
+> what measures would you take to not overwhelm the website server?
 > 
 > > ## Some Solutions
-> > * Avoid concentrating your webscraping into a short amount of time, so that you have longer delays between requests.
-> > * Webscrape sites during off-peak hours to help ensure that other website users may access website services.
+> > * Include delays between each request. This way, the target server enough time to handle requests from other users
+> > between ours, and the server would not get overwhelmed and crash. Usually software and programming packages for
+> > web scraping will incorporate the option for including delays between requests.
+> > * Scrape only what you need. Instead of downloading entire web pages, target only the specific elements or
+> > information that are relevant to your project.
+> > * Scrape sites during off-peak hours to help ensure that other website users may access website services.
+> > * Read the robots.txt file for the website, which specifies the areas of the site that are off-limits for 
+> > scraping. This helps in avoiding unnecessary strain on the server and ensures that you are not accessing 
+> > restricted data.
 > > 
 > {: .solution}
 {: .challenge}
