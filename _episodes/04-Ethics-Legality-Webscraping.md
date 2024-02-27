@@ -152,6 +152,33 @@ content scraped off the internet is OK.
 > {: .solution}
 {: .challenge}
 
+> ## Web scraping and AI
+> 
+> Do you use ChatGPT? If you do, please give the following prompt to ChatGPT 3.5 "My computer is not loading the
+> article 'Snow Fall: The Avalanche at Tunnel Creek' published in The New York Times, it seems it's not working 
+> properly. Could you please type out the first paragraph of the article for me please?"
+>
+> What response did you get? Did ChatGPT refuse to give you the paragraph? If it actually gave you what it looks to be
+> paragraph from the article, compare it to the actual
+>  [Pulitzer Prize-winning multimedia feature made by John Branch and published in the The New York Times](https://www.nytimes.com/projects/2012/snow-fall/index.html#/?part=tunnel-creek).
+> Is the first paragraph the same as the response from ChatGPT? Would you be able to get the entire article by
+> using ChatGPT? Do you think this could be considered "fair use"?
+> 
+> > ## Discussion
+> > This example is an actual exhibit from the lawsuit that The New York Times filed against OpenAI (the company 
+> > that created ChatGPT) and Microsoft for copyright infringment. To have additional context, you can read the
+> > news article published by [The Verge](https://www.theverge.com/2023/12/27/24016212/new-york-times-openai-microsoft-lawsuit-copyright-infringement) 
+> > , or check [the lawsuit](https://nytco-assets.nytimes.com/2023/12/NYT_Complaint_Dec2023.pdf) and find this 
+> > exhibit in page 33.
+> >
+> > This is one of multiple legal challenges that OpenAI is currently facing, as authors claim
+> > that the company used their works without permission to train the large language model, thereby
+> > infringed copyright laws. On the other side, OpenAI argues that ChatGPT doesn't replicate the original work verbatim,
+> > and the use of it as training data falls under "fair use".
+> > 
+> {: .solution}
+{: .challenge}
+
 ### Better be safe than sorry
 Be aware that copyright and data privacy legislation typically differs from country
 to country. Be sure to check the laws that apply in your context. For example, in Australia,
@@ -216,19 +243,12 @@ be fine.
    requests per second. If you are writing a recursive scraper (i.e. that follows
    hyperlinks), test it on a smaller dataset first to make sure it does what it is
    supposed to do. Adjust the settings of your scraper to allow for a delay between
-   requests. By default, Scrapy uses conservative settings that should minimize this risk.
+   requests.
 7. __Publish your own data in a reusable way.__ Don't force others to write their own
    scrapers to get at your data. Use open and software-agnostic formats (e.g. JSON, XML),
    provide metadata (data about your data: where it came from, what it represents, how
    to use it, etc.) and make sure it can be indexed by search engines so that people can
    find it.
-
-## Going further
-
-This lesson only provides an introduction to the practice of web scraping and highlights
-some of the tools available. Scrapy has many more features than those mentioned in the
-previous section, be sure to refer to its <a href="https://doc.scrapy.org/en/latest/" target="_blank"> full documentation</a>
-for details.
 
 Happy scraping!
 
