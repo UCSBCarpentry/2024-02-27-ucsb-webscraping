@@ -1,5 +1,5 @@
 ---
-title: "Ethics & Legality of Webscraping"
+title: "Ethics & Legality of Web Scraping"
 teaching: 15
 exercises: 15
 questions:
